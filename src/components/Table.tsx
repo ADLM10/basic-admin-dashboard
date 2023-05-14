@@ -16,7 +16,7 @@ type Modal = {
 };
 
 const Table = () => {
-  const { users, pageNo, setPageNo } = useUserContext();
+  const { users } = useUserContext();
 
   const [showModal, setShowModal] = useState<Modal>({
     show: false,
@@ -119,8 +119,6 @@ const Table = () => {
     pageOptions,
     state: { pageIndex },
   } = tableInstance;
-
-  setPageNo(pageIndex);
 
   return (
     <>
