@@ -3,17 +3,24 @@ import "./App.css";
 import Dashboard from "./Dashboard";
 import { UserDataProvider } from "./context/UserDataProvider";
 
-const queryClient = new QueryClient();
+
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      refetchOnWindowFocus: false,
+    },
+  },
+});
 
 function App() {
   return (
-    <div className="h-screen w-screen bg-gradient-to-r from-slate-400 to-teal-100 p-4">
+    <main className="h-full w-full p-4">
       <QueryClientProvider client={queryClient}>
         <UserDataProvider>
           <Dashboard />
         </UserDataProvider>
       </QueryClientProvider>
-    </div>
+    </main>
   );
 }
 

@@ -3,7 +3,7 @@ import axios from "axios";
 import { createContext, useState, useContext } from "react";
 
 export type User = {
-  id: number;
+  id: string;
   fullName: string;
   gender: string;
   email: string;
@@ -16,6 +16,8 @@ export type User = {
 interface UserContextInterface {
   users: User[];
   setUsers: React.Dispatch<React.SetStateAction<User[]>>;
+  pageNo: number;
+  setPageNo: React.Dispatch<React.SetStateAction<number>>;
 }
 
 interface UserDataProviderProps {
@@ -25,6 +27,10 @@ interface UserDataProviderProps {
 const UserContext = createContext<UserContextInterface>({
   users: [],
   setUsers: () => {
+    return;
+  },
+  pageNo: 1,
+  setPageNo: () => {
     return;
   },
 });
@@ -37,23 +43,26 @@ export function useUserContext() {
 export const UserDataProvider = (props: UserDataProviderProps) => {
   const [users, setUsers] = useState<User[]>([]);
 
+  const [pageNo, setPageNo] = useState<number>(1);
+
   const { isLoading } = useQuery({
     queryKey: ["userData"],
     queryFn: () =>
-      axios
-        .get("https://my-json-server.typicode.com/ADLM10/mock-user-db/users")
-        .then((res) => {
-          res.data.length > 0 && setUsers(res.data);
-        }),
+      axios.get(import.meta.env.VITE_DB_URL as string).then((res) => {
+        res.data.length > 0 && setUsers(res.data);
+      }),
   });
 
   if (isLoading) return <div>Loading ...</div>;
 
   const { children } = props;
 
-  return (
-    <UserContext.Provider value={{ users, setUsers }}>
-      {children}
-    </UserContext.Provider>
-  );
+  const value = {
+    users,
+    setUsers,
+    pageNo,
+    setPageNo,
+  };
+
+  return <UserContext.Provider value={value}>{children}</UserContext.Provider>;
 };

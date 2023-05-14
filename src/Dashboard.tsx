@@ -1,19 +1,16 @@
 import Navbar from "./components/Navbar";
 import Table from "./components/Table";
+import { ToastContainer} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Dashboard = () => {
   return (
     <main
-      className="h-full w-[99%] flex flex-col justify-start items-center bg-white "
-      style={{
-        border: "2px solid black",
-        borderRadius: "10px",
-        padding: "20px",
-        boxShadow: "0px 0px 10px 0px black",
-      }}
+      className="h-fit w-full flex flex-col justify-start items-center bg-white rounded-2xl shadow-2xl p-5"
     >
-      <Navbar UserCount={10} />
+      <Navbar />
       <Table />
+      <ToastContainer />
     </main>
   );
 };
