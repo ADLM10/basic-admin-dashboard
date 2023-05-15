@@ -22,8 +22,9 @@ const DeleteUserModal = ({
       }
     );
     if (response.ok) {
+      const idx = users.findIndex((user) => user.id === id);
       const updatedUsers = users;
-      updatedUsers.splice(parseInt(id), 1);
+      updatedUsers.splice(idx, 1);
       setUsers([...updatedUsers]);
       toast.success("User deleted successfully!", {
         position: "top-right",

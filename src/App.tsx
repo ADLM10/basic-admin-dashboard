@@ -1,8 +1,6 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import "./App.css";
 import Dashboard from "./Dashboard";
 import { UserDataProvider } from "./context/UserDataProvider";
-
 
 const queryClient = new QueryClient({
   defaultOptions: {

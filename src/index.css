@@ -10,7 +10,6 @@
   font-family: "Poppins", sans-serif;
 }
 
-.download-btn:hover img{
+.download-btn:hover img {
   filter: invert(1);
 }
-
