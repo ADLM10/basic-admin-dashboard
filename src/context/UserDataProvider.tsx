@@ -2,17 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import { createContext, useState, useContext } from "react";
 import Preloader from "../components/Preloader";
-
-export type User = {
-  id: string;
-  fullName: string;
-  gender: string;
-  email: string;
-  role: string;
-  isActive: boolean;
-  lastLogin: string;
-  profileImageUrl: string;
-};
+import { User } from "../types/User";
 
 interface UserContextInterface {
   users: User[];

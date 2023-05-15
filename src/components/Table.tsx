@@ -1,7 +1,8 @@
 import { useMemo, useState } from "react";
 import { useUserContext } from "../context/UserDataProvider";
 import { Column, usePagination, useTable, useSortBy } from "react-table";
-import { User } from "../context/UserDataProvider";
+import { User } from "../types/User";
+import { Modal } from "../types/Modal";
 import Badge from "./Badge";
 import DateTime from "./DateTime";
 import UserDetailsModal from "./Modals/UserDetailsModal";
@@ -10,11 +11,7 @@ import DeleteUserModal from "./Modals/DeleteUserModal";
 import ProfilePlaceholder from "./ProfilePlaceholder";
 import Pagination from "./Pagination";
 
-type Modal = {
-  show: boolean;
-  modalName: string;
-  details: User;
-};
+
 
 const Table = () => {
   const { users, pageNo } = useUserContext();

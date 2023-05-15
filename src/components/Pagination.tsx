@@ -1,5 +1,6 @@
 import { TableInstance } from "react-table";
-import { User, useUserContext } from "../context/UserDataProvider";
+import {  useUserContext } from "../context/UserDataProvider";
+import { User } from "../types/User";
 
 const Pagination = ({
   tableInstance,

@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { User, useUserContext } from "../../context/UserDataProvider";
+import { useUserContext } from "../../context/UserDataProvider";
+import { User } from "../../types/User";
 import { toast } from "react-toastify";
 
 const EditUserModal = ({
@@ -80,7 +81,7 @@ const EditUserModal = ({
         } fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 backdrop-blur-sm z-50 flex justify-center items-center`}
       >
         <div
-          className="bg-white w-11/12 md:1/2 h-[90%] rounded-lg shadow-lg justify-center items-center flex-col p-4
+          className="bg-white w-11/12 md:w-3/4 h-[90%] rounded-lg shadow-lg justify-center items-center flex-col p-4
         overflow-y-scroll
         "
         >
@@ -101,7 +102,7 @@ const EditUserModal = ({
             }}
             className="h-[85%] flex flex-col justify-start items-start gap-5 p-5"
           >
-            <div className="w-full h-fit flex-col md:flex-row  justify-evenly items-center bg-gray-200 shadow-2xl rounded-xl py-5 px-1">
+            <div className="w-full h-fit flex flex-col md:flex-row  justify-evenly items-center bg-gray-200 shadow-2xl rounded-xl py-5 px-1">
               <label
                 htmlFor="fullName"
                 className="text-sm text-black font-semibold ml-4"
@@ -141,7 +142,7 @@ const EditUserModal = ({
                 }}
               />
             </div>
-            <div className="w-full h-fit flex justify-evenly items-center bg-gray-200 shadow-2xl rounded-xl p-5">
+            <div className="w-full h-fit flex justify-start gap-3 items-center bg-gray-200 shadow-2xl rounded-xl p-5">
               <label
                 htmlFor="gender"
                 className="text-sm text-black font-semibold"
@@ -205,7 +206,7 @@ const EditUserModal = ({
                 <option value="Moderator">Moderator</option>
               </select>
             </div>
-            <div className="w-full h-fit flex-col md:flex-row  justify-evenly items-center bg-gray-200 shadow-2xl rounded-xl py-5 px-1">
+            <div className="w-full h-fit flex flex-col md:flex-row  justify-evenly items-center bg-gray-200 shadow-2xl rounded-xl py-5 px-1">
               <label
                 htmlFor="profileImageUrl"
                 className="text-sm text-black font-semibold ml-4"

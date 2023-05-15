@@ -90,7 +90,7 @@ const AddUserModal = ({
       {showModal && (
         <div className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 backdrop-blur-sm z-50 flex justify-center items-center">
           <div
-            className="bg-white w-11/12 md:3/4 h-[90%] rounded-lg shadow-lg justify-center items-center flex-col p-4
+            className="bg-white w-11/12 md:w-3/4 h-[90%] rounded-lg shadow-lg justify-center items-center flex-col p-4
           overflow-y-scroll
           "
           >
@@ -151,7 +151,7 @@ const AddUserModal = ({
                   }}
                 />
               </div>
-              <div className="w-full h-fit flex justify-evenly items-center bg-gray-200 shadow-2xl rounded-xl p-5">
+              <div className="w-full h-fit flex justify-start gap-3 items-center bg-gray-200 shadow-2xl rounded-xl p-5">
                 <label
                   htmlFor="gender"
                   className="text-sm text-black font-semibold"

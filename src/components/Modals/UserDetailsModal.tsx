@@ -1,4 +1,4 @@
-import { User } from "../../context/UserDataProvider";
+import { User } from "../../types/User"
 import Badge from "../Badge";
 
 const UserDetailsModal = ({

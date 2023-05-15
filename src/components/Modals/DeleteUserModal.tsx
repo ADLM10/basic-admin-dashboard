@@ -1,4 +1,5 @@
-import { User, useUserContext } from "../../context/UserDataProvider";
+import { useUserContext } from "../../context/UserDataProvider";
+import { User } from "../../types/User";
 import { toast } from "react-toastify";
 
 const DeleteUserModal = ({
