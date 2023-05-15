@@ -20,8 +20,10 @@ const Navbar = () => {
             Administer team members and account permissions from here.
           </span>
         </div>
-        <div className="flex flex-col gap-4 justify-evenly items-center w-1/4  md:flex-row md:w-2/3 text-xs lg:text-sm
-        ">
+        <div
+          className="flex flex-col gap-4 justify-evenly items-center w-1/4  md:flex-row md:w-2/3 text-xs lg:text-sm
+        "
+        >
           <span className="bg-sky-600 text-white w-24 h-10 md:w-32  flex justify-center items-center rounded-full shadow-md relative">
             <span>{users.length} Users</span>
             <span className="fas fa-user ml-2"></span>
@@ -38,17 +40,18 @@ const Navbar = () => {
             className="bg-yellow-300 text-black w-16 h-10 md:w-48 md:h-12  rounded-lg shadow-lg flex gap-2 justify-center items-center
          hover:shadow-xl transition duration-300 ease-in-out download-btn hover:bg-yellow-500 hover:text-white"
           >
-            <CSVLink data={users} headers={Headers} filename={"users.csv"}
-            className="flex gap-2 justify-center items-center"
+            <CSVLink
+              data={users}
+              headers={Headers}
+              filename={"users.csv"}
+              className="flex gap-2 justify-center items-center"
             >
               <img
                 className="transition duration-300 ease-in-out md:h-5 md:w-5"
                 src="https://img.icons8.com/ios/25/download-from-cloud--v1.png"
                 alt="download-from-cloud--v1"
               />
-              <span className="transition duration-300 ease-in-out hidden md:block">
-                Download CSV
-              </span>
+              <span className="hidden md:block">Download CSV</span>
             </CSVLink>
           </button>
           <button
