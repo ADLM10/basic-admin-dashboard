@@ -15,6 +15,7 @@ function App() {
     <main className="h-full w-full p-4">
       <QueryClientProvider client={queryClient}>
         <UserDataProvider>
+          {/* // Compare this snippet from src\Dashboard.tsx: */}
           <Dashboard />
         </UserDataProvider>
       </QueryClientProvider>

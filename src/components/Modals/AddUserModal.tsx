@@ -50,6 +50,7 @@ const AddUserModal = ({
     const data = await res.json();
 
     if (data) {
+      //Setting the users in the context for real time update
       setUsers([...users, data]);
       toast.success("User added successfully!", {
         position: "top-right",

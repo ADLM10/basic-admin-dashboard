@@ -39,8 +39,10 @@ export const UserDataProvider = (props: UserDataProviderProps) => {
   const { isLoading } = useQuery({
     queryKey: ["userData"],
     queryFn: () =>
+      //getting the users from the database
       axios.get(import.meta.env.VITE_DB_URL as string).then((res) => {
         res.data.length > 0 && setUsers(res.data);
+        //Setting the users in the context
       }),
   });
 

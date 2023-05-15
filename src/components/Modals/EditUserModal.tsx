@@ -50,6 +50,7 @@ const EditUserModal = ({
       const idx = users.findIndex((user) => user.id === id);
       const updatedUsers = users;
       updatedUsers[idx] = data;
+      //Setting the users in the context for real time update
       setUsers([...updatedUsers]);
       toast.success("User updated successfully!", {
         position: "top-right",

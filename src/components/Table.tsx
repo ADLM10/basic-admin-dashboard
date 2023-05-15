@@ -1,6 +1,12 @@
 import { useMemo, useState } from "react";
 import { useUserContext } from "../context/UserDataProvider";
-import { Column, usePagination, useTable, useSortBy } from "react-table";
+import {
+  Column,
+  usePagination,
+  useTable,
+  useSortBy,
+  HeaderGroup,
+} from "react-table";
 import { User } from "../types/User";
 import { Modal } from "../types/Modal";
 import Badge from "./Badge";
@@ -10,8 +16,6 @@ import EditUserModal from "./Modals/EditUserModal";
 import DeleteUserModal from "./Modals/DeleteUserModal";
 import ProfilePlaceholder from "./ProfilePlaceholder";
 import Pagination from "./Pagination";
-
-
 
 const Table = () => {
   const { users, pageNo } = useUserContext();
@@ -107,6 +111,7 @@ const Table = () => {
   );
 
   const tableInstance = useTable(
+    //Setting the initial page to pageNo from the context
     { columns, data, initialState: { pageIndex: pageNo } },
     useSortBy,
     usePagination
@@ -131,7 +136,7 @@ const Table = () => {
         "
         >
           <thead>
-            {headerGroups.map((headerGroup: any) => (
+            {headerGroups.map((headerGroup: HeaderGroup<User>) => (
               <tr {...headerGroup.getHeaderGroupProps()}>
                 {headerGroup.headers.map((column: any) => (
                   <th

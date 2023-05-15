@@ -26,6 +26,7 @@ const DeleteUserModal = ({
       const idx = users.findIndex((user) => user.id === id);
       const updatedUsers = users;
       updatedUsers.splice(idx, 1);
+      //Setting the users in the context for real time update
       setUsers([...updatedUsers]);
       toast.success("User deleted successfully!", {
         position: "top-right",

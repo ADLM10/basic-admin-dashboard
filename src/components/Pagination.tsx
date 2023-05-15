@@ -1,5 +1,5 @@
 import { TableInstance } from "react-table";
-import {  useUserContext } from "../context/UserDataProvider";
+import { useUserContext } from "../context/UserDataProvider";
 import { User } from "../types/User";
 
 const Pagination = ({
@@ -11,8 +11,7 @@ const Pagination = ({
   pageOptions: number[];
   pageIndex: number;
 }) => {
-
-    const { setPageNo } = useUserContext();
+  const { setPageNo } = useUserContext();
 
   return (
     <div className="flex flex-col md:flex-row gap-5 justify-between items-center mt-4 bg-slate-100 w-full p-4 rounded-b-lg">
@@ -25,6 +24,7 @@ const Pagination = ({
         onClick={() => {
           pageIndex > 0 && tableInstance.previousPage();
           pageIndex > 0 && setPageNo(pageIndex - 1);
+          // Using setPageNo() to update the pageNo in the context
         }}
         disabled={pageIndex === 0}
       >
@@ -45,6 +45,7 @@ const Pagination = ({
               onClick={() => {
                 tableInstance.gotoPage(pageNumber);
                 pageIndex !== pageNumber && setPageNo(pageNumber);
+                // Using setPageNo() to update the pageNo in the context
               }}
             >
               {pageNumber + 1}
@@ -61,6 +62,7 @@ const Pagination = ({
         onClick={() => {
           pageIndex < pageOptions.length - 1 && tableInstance.nextPage();
           pageIndex < pageOptions.length - 1 && setPageNo(pageIndex + 1);
+          // Using setPageNo() to update the pageNo in the context
         }}
         disabled={pageIndex === pageOptions.length - 1}
       >
