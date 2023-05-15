@@ -17,7 +17,7 @@ type Modal = {
 };
 
 const Table = () => {
-  const { users, pageNo, setPageNo } = useUserContext();
+  const { users, pageNo } = useUserContext();
 
   const [showModal, setShowModal] = useState<Modal>({
     show: false,
