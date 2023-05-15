@@ -54,16 +54,16 @@ const DeleteUserModal = ({
         showModal ? "flex" : "hidden"
       } fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 backdrop-blur-sm z-50 flex justify-center items-center`}
     >
-      <div className="bg-white w-1/2 h-72 rounded-lg shadow-lg justify-center items-center flex-col p-4">
+      <div className="bg-white w-3/4 md:w-2/5 h-80 md:h-64 rounded-lg shadow-lg justify-center items-center flex-col p-4">
         <div className="w-full h-full flex flex-col justify-evenly items-center bg-red-100 rounded-lg">
-          <div className="w-full h-fit flex justify-center items-center gap-4 ">
+          <div className="w-full h-fit flex flex-col md:flex-row justify-center items-center gap-4 ">
             <span className="fas fa-exclamation-triangle text-red-500 text-4xl"></span>
             <p className=" text-lg  text-center">
               Are you sure you want to delete <br />
               <span className="font-semibold">{userDetails.fullName}</span>?
             </p>
           </div>
-          <div className="flex justify-end items-end gap-10">
+          <div className="flex flex-col md:flex-row justify-center items-center gap-5">
             <button
               className="bg-red-500 text-white px-4 py-2 rounded-lg shadow-xl flex gap-2 justify-center items-center hover:bg-red-800 hover:shadow-2xl transition duration-300 ease-in-out"
               onClick={() => {

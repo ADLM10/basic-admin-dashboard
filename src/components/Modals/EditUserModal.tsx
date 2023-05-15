@@ -79,7 +79,11 @@ const EditUserModal = ({
           showModal ? "flex" : "hidden"
         } fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 backdrop-blur-sm z-50 flex justify-center items-center`}
       >
-        <div className="bg-white w-1/2 h-[90%] rounded-lg shadow-lg justify-center items-center flex-col p-4">
+        <div
+          className="bg-white w-11/12 md:1/2 h-[90%] rounded-lg shadow-lg justify-center items-center flex-col p-4
+        overflow-y-scroll
+        "
+        >
           <div className="w-full h-16 flex justify-between px-10 items-center">
             <h1 className="text-2xl font-bold">Edit User</h1>
             <button
@@ -97,17 +101,17 @@ const EditUserModal = ({
             }}
             className="h-[85%] flex flex-col justify-start items-start gap-5 p-5"
           >
-            <div className="w-full h-fit flex justify-evenly items-center bg-gray-200 shadow-2xl rounded-xl p-5">
+            <div className="w-full h-fit flex-col md:flex-row  justify-evenly items-center bg-gray-200 shadow-2xl rounded-xl py-5 px-1">
               <label
                 htmlFor="fullName"
-                className="text-sm text-black font-semibold"
+                className="text-sm text-black font-semibold ml-4"
               >
                 Full Name
               </label>
               <input
                 type="text"
                 placeholder="Full Name"
-                className="w-3/4 h-8 outline-none px-2 py-1  rounded-lg shadow-lg border border-gray-300 "
+                className="w-11/12 h-8 outline-none px-2 py-1 m-2 rounded-lg shadow-lg border border-gray-300 "
                 value={editUser.fullName}
                 onChange={(e) => {
                   setEditUser({
@@ -117,17 +121,17 @@ const EditUserModal = ({
                 }}
               />
             </div>
-            <div className="w-full h-fit flex justify-evenly items-center bg-gray-200 shadow-2xl rounded-xl p-5">
+            <div className="w-full h-fit flex-col md:flex-row  justify-evenly items-center bg-gray-200 shadow-2xl rounded-xl py-5 px-1">
               <label
                 htmlFor="email"
-                className="text-sm text-black font-semibold"
+                className="text-sm text-black font-semibold ml-4"
               >
                 Email
               </label>
               <input
                 type="email"
                 placeholder="Email"
-                className="w-3/4 h-8 outline-none px-2 py-1  rounded-lg shadow-lg border border-gray-300 "
+                className="w-11/12 h-8 outline-none px-2 py-1 m-2 rounded-lg shadow-lg border border-gray-300"
                 value={editUser.email}
                 onChange={(e) => {
                   setEditUser({
@@ -201,17 +205,17 @@ const EditUserModal = ({
                 <option value="Moderator">Moderator</option>
               </select>
             </div>
-            <div className="w-full h-fit flex justify-evenly items-center bg-gray-200 shadow-2xl rounded-xl p-5">
+            <div className="w-full h-fit flex-col md:flex-row  justify-evenly items-center bg-gray-200 shadow-2xl rounded-xl py-5 px-1">
               <label
                 htmlFor="profileImageUrl"
-                className="text-sm text-black font-semibold"
+                className="text-sm text-black font-semibold ml-4"
               >
                 Profile Image URL
               </label>
               <input
                 type="text"
                 placeholder="Profile Image URL"
-                className="w-3/4 h-8 outline-none px-2 py-1  rounded-lg shadow-lg border border-gray-300 "
+                className="w-11/12 h-8 outline-none px-2 py-1 m-2 rounded-lg shadow-lg border border-gray-300 "
                 value={editUser.profileImageUrl}
                 onChange={(e) => {
                   setEditUser({
@@ -224,13 +228,13 @@ const EditUserModal = ({
             <div className="w-full h-full flex justify-end items-center gap-3">
               <button
                 type="submit"
-                className="bg-blue-600 text-white px-4 py-2 rounded-lg shadow-xl flex gap-2 justify-center items-center"
+                className="bg-blue-600 text-white px-4 py-2 rounded-lg shadow-xl flex gap-2 justify-center items-center mb-4"
               >
                 <span className="fas fa-user-plus"></span>
                 <span>Save</span>
               </button>
               <button
-                className="bg-red-500 text-white px-4 py-2 rounded-lg shadow-xl flex gap-2 justify-center items-center hover:bg-red-800 hover:shadow-2xl transition duration-300 ease-in-out"
+                className="bg-red-500 text-white px-4 py-2 rounded-lg shadow-xl flex gap-2 justify-center items-center hover:bg-red-800 hover:shadow-2xl transition duration-300 ease-in-out mb-4"
                 onClick={closeModal}
               >
                 <span className="fas fa-times"></span>
